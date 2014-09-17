@@ -5,5 +5,4 @@ development:
  pool: 5
  username: raghuveer1
  password: qazplm123
- host: localhost
- port: 5432
+  
