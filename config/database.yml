@@ -1,8 +1,15 @@
-development:
- adapter: postgresql
- encoding: unicode
- database: raghu-app23
- pool: 5
- username: raghuveer1
- password: qazplm123
+# # development:
+# #  adapter: postgresql
+# #  encoding: unicode
+# #  database: raghu-app23
+# #  pool: 5
+# #  username: raghuveer1
+# #  password: qazplm123
   
+#   production:
+#   adapter: postgresql
+#  encoding: unicode
+#  database: raghu-app123
+#  pool: 5
+#  username: raghuveer1
+#  password: qazplm123
