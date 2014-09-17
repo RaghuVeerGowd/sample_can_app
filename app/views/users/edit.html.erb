@@ -1,0 +1,25 @@
+<div align="right" > 
+	<h1> 
+		<%= link_to "Home",root_path %>
+	</h1></div>
+
+
+	<h1>Editing user</h1>
+	<%= form_for(@user) do |f| %>
+
+
+	<div class="field">
+		<%= f.label :name %><br />
+		<%= f.text_field :user_name %>
+	</div>
+	<div class="field">
+		<%= f.label :role %><br />
+        <%= f.select :role,options_for_select(['Admin','User','Author']),:selected => params[:role] %>
+	</div>
+	 
+	<%= f.submit%>
+	<% end %>
+	<p align="right"><h1><%= link_to "Back",users_path%>
+	</h1>
+</p>
+ 

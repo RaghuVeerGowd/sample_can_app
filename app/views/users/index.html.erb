@@ -1,0 +1,30 @@
+<div align="right-top" > 
+<h1><%=link_to "Home" ,root_path%></h1></div>
+<div align="left-top" style="background-color:lightgreen;margin:20px;padding:20px;">
+   <h1>Listing users</h1>
+   
+   
+   <table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Role</th>
+    <th>Email</th>
+    <th>Action</th>
+     
+     <tr>
+
+<% @user.each do |user| %>
+ 
+    <td><%= user.user_name %></td>
+    <td><%= user.role %></td>
+    <td><%= user.email %></td>
+    <td><%= link_to('Update', edit_user_path(user))%></td>
+
+     
+  </tr>
+<% end %>
+</table>
+
+</div>
+
+

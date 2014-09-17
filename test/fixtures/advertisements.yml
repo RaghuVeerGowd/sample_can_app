@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ad_name: MyString
+  ad_discription: MyText
+  ad_author_name: MyString
+  user_id: 1
+
+two:
+  ad_name: MyString
+  ad_discription: MyText
+  ad_author_name: MyString
+  user_id: 1

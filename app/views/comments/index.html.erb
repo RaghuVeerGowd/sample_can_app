@@ -1,0 +1,49 @@
+<div align="right" > 
+<h1> 
+<%= link_to 'Home', root_path %>
+ </h1>
+ </div>
+
+ <div align="left-top" style="background-color:lightgreen;margin:20px;padding:20px;">
+  <h1>Listing  Response</h1>
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   
+</div>
+
+
+<div align="left-top" style="background-color:lightgreen;margin:20px;padding:20px;">
+<table border="3">
+  <tr>
+     
+    <th>name</th>
+    <th>Comment  </th>
+    
+    <th>Action</th>
+    <% if can? :update, @comments %>
+    <th>Action</th>
+    <%end%>
+    <% if can? :update, @comments %>
+    <th>Action</th>
+    <%end%>
+  </tr>
+
+<% @comments.each do |comment| %>
+  <tr>
+     
+    <td><%= comment.comment_author_name %></td>
+    <td><%= comment.comment_description %></td>
+    
+    <td><%= link_to 'Show', comment %></td>
+    <% if can? :update, @comments %>
+    <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
+    <%end%>
+    <% if can? :delete, @advertisements %>
+    <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end%>
+  </tr>
+<% end %>
+</table>
+
+<br />
+ 
+<%#= link_to 'Contact', new_comment_path %>
+</div>

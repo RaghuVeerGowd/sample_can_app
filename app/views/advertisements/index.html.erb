@@ -1,0 +1,52 @@
+<%if can? :create ,User %>
+<div align="left-top" style="background-color:lightblue;margin:20px;padding:20px;">
+	<h1>List of Users  </h1>
+	
+	<%= link_to "CLICK Here" , users_path%>
+	<%end%>
+</div>
+<div align="left-top" style="background-color:lightgreen;margin:20px;padding:20px;">
+	<h1>ADVERTISEMENTS </h1>
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   
+</div>
+
+ 
+
+<table border="3" style="background-color:lightgreen;margin:20px;padding:20px;" >
+  <tr>
+    <th>AdD Name</th>
+    <th>AdD Discription</th>
+    <th>Company name</th>
+    <th>Action</th>
+    <% if can? :update, @advertisements %>
+    <th>Action</th>
+    <%end%>
+    <% if can? :delete, @advertisements %>
+    <th>Action</th>
+    <%end%>
+  </tr>
+
+<% @advertisements.each do |advertisement| %>
+  <tr>
+    <td><%= advertisement.ad_name %></td>
+    <td><%= advertisement.ad_discription %></td>
+    <td><%= advertisement.ad_author_name %></td>
+    <td><%= link_to 'Show', advertisement %></td>
+    <% if can? :update, @advertisements %>
+    <td><%= link_to 'Edit', edit_advertisement_path(advertisement)  %></td>
+     <%end%>
+     <% if can? :delete, @advertisements %>
+    <td><%= link_to 'Destroy', advertisement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <%end%>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<div align="right-top" > 
+<h1><%if can? :create ,Advertisement %>
+<%= link_to 'New Advertisement', new_advertisement_path %>
+<%end%></h1></div>
+</div>
+  

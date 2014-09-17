@@ -1,0 +1,10 @@
+<div align="left-top" style="background-color:lightblue;margin:20px;padding:20px;">
+	<h1>List of Users  </h1>
+	<%if can? :create ,User %>
+	<%= link_to "CLICK Here" , users_path%>
+	<%end%>
+</div>
+<div align="left-top" style="background-color:lightgreen;margin:20px;padding:20px;">
+	<h1>ADVERTISEMENTS </h1>
+    <%= link_to "CLICK Here" , advertisements_path%>
+</div>

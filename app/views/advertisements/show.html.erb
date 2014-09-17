@@ -1,0 +1,62 @@
+<div align="right">
+<h1>
+ <%= link_to 'Back', advertisements_path %>  
+ 
+</h1>
+</div>
+<div align="left-top" style="background-color:lightgreen;margin:20px;padding:20px;">
+  <h1>ADVERTISEMENT </h1>
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   
+</div>
+
+
+<div align="left-top" style="background-color:lightgreen;margin:20px;padding:20px;">
+  <p>
+    <b>Ad name:</b>
+    <div align="left-top" style="background-color:yellow;margin:20px;padding:20px;">
+      <%= @advertisement.ad_name %>
+    </div>
+  </p>
+</div>
+
+<div align="left-top" style="background-color:lightgreen;margin:20px;padding:20px;">
+  <p>
+   <b>Ad discription:</b>
+   <div align="left-top" style="background-color:yellow;margin:20px;padding:20px;">
+     <%= @advertisement.ad_discription %>
+   </div>
+ </p>
+</div>
+
+<div align="left-top" style="background-color:lightgreen;margin:20px;padding:20px;">
+  <p>
+   <b>Ad author name:</b>
+   <div align="left-top" style="background-color:yellow;margin:20px;padding:20px;">
+     <%= @advertisement.ad_author_name %>
+   </div>
+ </p>
+</div>
+
+
+<div align="left">
+  <h1>
+    <p>
+     <% if can? :update, Comment %>
+       
+     <%= link_to 'Check Response',comments_path(:advertisement_id => @advertisement.id) %>
+      
+     <%end%>
+     
+     </p>
+     <p>
+     <% if can? :create,  Comment %>
+
+     <%= link_to 'Contact', new_comment_path(:advertisement_id => @advertisement.id) %>
+     <%end%>
+   </p>
+   <% if can? :update, @advertisements %>
+   <%= link_to 'Edit', edit_advertisement_path(@advertisement) %> 
+   <%end%>
+  </h1> 
+</div>
+
